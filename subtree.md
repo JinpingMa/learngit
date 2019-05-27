@@ -58,6 +58,16 @@ $ git merge --squash -s subtree --no-commit subtree_branch --allow-unrelated-his
 Squash commit -- not updating HEAD
 Automatic merge went well; stopped before committing as requested
 ```
+> 相反的，可以在当前项目的`subtree`文件做修改，再合并到`subtree_branch`分支，提交到远程项目
+
+```bash
+$ git checkout subtree_branch
+# --allow-unrelated-histories参数合并不相关历史
+$ git merge --squash -s subtree --no-commit --allow-unrelated-histories master
+Squash commit -- not updating HEAD
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
 ### 4.查看subtree文件夹和分支之间的不同
 
 ```bash
