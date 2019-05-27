@@ -64,6 +64,12 @@ Automatic merge went well; stopped before committing as requested
 ```bash
 # subtree文件夹和subtree_remote分支之间的不同
 $ git diff-tree -p subtree_branch
+<<<<<<< HEAD
 # subtree文件夹和master分支之间的不同
 $ git diff-tree -p subtree_remote/master
 ````
+=======
+# subtree文件夹和最近一次拉取的subtree_remote的master分支之间的不同
+$ git diff-tree -p subtree_remote/master
+````
+>>>>>>> subtree_branch
