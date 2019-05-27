@@ -58,7 +58,6 @@ $ git merge --squash -s subtree --no-commit subtree_branch --allow-unrelated-his
 Squash commit -- not updating HEAD
 Automatic merge went well; stopped before committing as requested
 ```
-
 ### 4.查看subtree文件夹和分支之间的不同
 
 ```bash
@@ -66,4 +65,4 @@ Automatic merge went well; stopped before committing as requested
 $ git diff-tree -p subtree_branch
 # subtree文件夹和最近一次拉取的subtree_remote的master分支之间的不同
 $ git diff-tree -p subtree_remote/master
-````
+```
