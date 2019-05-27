@@ -4,7 +4,7 @@
 
 ### 1.添加另一个项目的地址
 
-  ```git
+  ```bash
   $ git remote add subtree_remote git@github.com:schacon/subtree.git
   $ git fetch subtree_remote
   warning: no common commits
@@ -23,7 +23,7 @@
 
 > 在subtree_branch分支就可以看到subtree项目的master分支的文件，但是这样subtree子项目只是作为当前项目的一个分支。
 
-```shell
+```bash
 # subtree_branch分支的文件
 $ ls
 README.md   subtree.txt
@@ -37,9 +37,33 @@ LICENSE    readme.txt test.txt
 
 ### 2.用`git read-tree`将另一个项目变成该项目的一个子文件夹
 
-  ``` shell
+  ``` bash
   $ git read-tree --prefix=subtree/ -u subtree_branch
   # 项目subtree的文件保存在新创建的subtree文件夹中
   $ ls
   LICENSE    readme.txt subtree    test.txt
   ```
+
+### 3.子项目代码合并和更新
+
+``` bash
+# 更新代码
+$ git checkout subtree_branch
+$ git pull
+
+# 将更新的代码合并到mater分支，使用git merge -s subtree会把commit历史也合并到master上，如果不需要提交历史，使用下面命令
+$ git checkout master
+# --allow-unrelated-histories参数合并不相关历史
+$ git merge --squash -s subtree --no-commit subtree_branch --allow-unrelated-histories
+Squash commit -- not updating HEAD
+Automatic merge went well; stopped before committing as requested
+```
+
+### 4.查看subtree文件夹和分支之间的不同
+
+```bash
+# subtree文件夹和subtree_remote分支之间的不同
+$ git diff-tree -p subtree_branch
+# subtree文件夹和master分支之间的不同
+$ git diff-tree -p subtree_remote/master
+````
