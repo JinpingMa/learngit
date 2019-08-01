@@ -1,4 +1,3 @@
-node_modules
 **/*.svg
 package.json
 .dockerignore
@@ -13,3 +12,4 @@ package.json
 .eslintcache
 *.lock
 yarn-error.log
+node_modules

@@ -1,1 +1,1 @@
-git subtree for git subproject test
+git pre-commit with lint check
