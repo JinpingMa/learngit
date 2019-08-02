@@ -7,11 +7,11 @@
     "lint": "npm run lint:js && npm run lint:style && npm run lint:prettier",
     "lint-staged": "lint-staged",
     "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx ",
-    "lint:js": "eslint . --ext .js  exit 0",
+    "lint:js": "eslint . --ext .js;  exit 0",
     "lint:fix": "eslint . --ext .js,.jsx --fix && npm run lint:style  exit 0",
     "lint:prettier": "check-prettier lint",
     "lint:style": "stylelint --fix \"src/**/*.wxss\"",
-    "lint:xml": "stylelint --fix \"src/**/*.wxml\" --syntax html",
+    "lint:wxml": "stylelint --fix \"src/**/*.wxml\" --syntax html",
     "prettier": "prettier -c --write \"src/**/*\""
   },
   "repository": {
@@ -47,6 +47,6 @@
       "prettier --write",
       "git add"
     ],
-     "src/**/*.{js,jsx}": "npm run lint-staged:js"
+    "src/**/*.{js,jsx}": "npm run lint-staged:js"
   }
 }
