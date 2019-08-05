@@ -1,6 +1,5 @@
 node_modules
 **/*.svg
-package.json
 .dockerignore
 .DS_Store
 .idea
